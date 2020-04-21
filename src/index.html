@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Retro Game</title>
+</head>
+<body>
+    <div class="goods_container">
+        <div class="header_container">
+            <h1 class="main_header">Товары</h1>
+            <span class="add_button">+</span>
+        </div>
+        <div class="goods_list">
+            <div class="g_list_header">
+                <span class="header column">Название</span>
+                <span class="header column">Стоимость</span>
+                <span class="header column">Действия</span>
+            </div>
+            <div class="g_list_container"></div>
+        </div>
+            <form class="input_form if_none">
+                <span class="input_title">Название</span>
+                <input class="name_input" type="text" required>
+                <div class="name_input_tooltip if_none">Нужно ввести наименование товара</div>                
+                <span class="input_title">Стоимость</span>
+                <input class="price_input" type="number" required>
+                <div class="price_input_tooltip if_none">Допускается только ввод числа больше 0</div>
+                <button id="save" class="form_btn" type="submit">Сохранить</button>
+                <button id="reset" class="form_btn" type="reset">Отмена</button>
+            </form>
+            <form class="redact_form if_none">
+                <span class="input_title">Название</span>
+                <input class="name_redact" type="text" required>
+                <div class="name_redact_tooltip if_none">Нужно ввести наименование товара</div>   
+                <span class="input_title">Стоимость</span>
+                <input class="price_redact" type="number" required>
+                <div class="price_redact_tooltip if_none">Допускается только ввод числа больше 0</div>
+                <button id="save_redact" class="form_btn" type="submit">Сохранить</button>
+                <button id="reset_redact" class="form_btn" type="reset">Отмена</button>
+            </form>
+            
+    </div>
+    
+
+</body>
+</html>
