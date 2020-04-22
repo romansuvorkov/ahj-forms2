@@ -45,6 +45,7 @@ describe('E2E', () => {
       const saveBtn = await page.$('#save');
       saveBtn.click();
       await page.waitForSelector('.list_item');
+      await page.close();
     });
 
     test('Popover input form show', async () => {
@@ -57,6 +58,7 @@ describe('E2E', () => {
       const saveBtn = await page.$('#save');
       saveBtn.click();
       await page.waitForSelector('.name_input_tooltip', { visible: true });
+      await page.close();
     });
 
     test('Change items', async () => {
