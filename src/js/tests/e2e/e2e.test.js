@@ -28,10 +28,12 @@ describe('E2E', () => {
     );
     page = await browser.newPage();
   });
+
   afterAll(async () => {
     await browser.close();
     server.kill();
   });
+
   describe('Tests', () => {
     test('Creating item', async () => {
       await page.goto(url);
@@ -39,9 +41,9 @@ describe('E2E', () => {
       addProductButton.click();
       await page.waitForSelector('.input_form', { visible: true });
       const inputName = await page.$('.name_input');
-      inputName.type('Test');
+      await inputName.type('Test');
       const inputPrice = await page.$('.price_input');
-      inputPrice.type('123');
+      await inputPrice.type('123');
       const saveBtn = await page.$('#save');
       saveBtn.click();
       await page.waitForSelector('.list_item');
