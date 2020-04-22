@@ -45,20 +45,6 @@ describe('E2E', () => {
       const saveBtn = await page.$('#save');
       saveBtn.click();
       await page.waitForSelector('.list_item');
-      await page.close();
-    });
-
-    test('Popover input form show', async () => {
-      await page.goto(url);
-      const addProductButton = await page.$('.add_button');
-      addProductButton.click();
-      await page.waitForSelector('.input_form', { visible: true });
-      const inputPrice = await page.$('.price_input');
-      inputPrice.type('123');
-      const saveBtn = await page.$('#save');
-      saveBtn.click();
-      await page.waitForSelector('.name_input_tooltip', { visible: true });
-      await page.close();
     });
 
     test('Change items', async () => {
@@ -78,6 +64,18 @@ describe('E2E', () => {
       await page.waitForSelector('.redact_form', { visible: true });
       const redactName = await page.$('.name_redact');
       expect(await redactName.evaluate((node) => node.value)).not.toBe('');
+    });
+
+    test('Popover input form show', async () => {
+      await page.goto(url);
+      const addProductButton = await page.$('.add_button');
+      addProductButton.click();
+      await page.waitForSelector('.input_form', { visible: true });
+      const inputPrice = await page.$('.price_input');
+      inputPrice.type('123');
+      const saveBtn = await page.$('#save');
+      saveBtn.click();
+      await page.waitForSelector('.name_input_tooltip', { visible: true });
     });
   });
 });
